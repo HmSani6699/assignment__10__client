@@ -20,7 +20,7 @@ const Header = () => {
                 </div>
                 <div className="navbar-end">
                 {user&&
-                    <div className="avatar mr-4">
+                    <div className="avatar mr-4 hover:${}">
                     <div style={{width:'45px'}} className=" rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                         <img src={user&&user.photoURL} />
                     </div>

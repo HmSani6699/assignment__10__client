@@ -2,48 +2,58 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Providers/Authprovider';
 import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
+import { FaGithub, FaGoogle } from "react-icons/fa";
 
 const Login = () => {
 
-    const {signIn}=useContext(AuthContext);
+    const { signIn ,googleLogin,githubLogin} = useContext(AuthContext);
 
     const handleLoginFormSubmit = (event) => {
         event.preventDefault()
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email,password);
+        console.log(email, password);
 
         // sign in to user
-        signIn(email,password)
-        .then(result=>{
-            const user =result.user;
-            console.log(user);
-            form.reset();
-            toast.success('Register successfull!', {
-                position: "top-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "light",
+        signIn(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                form.reset();
+                toast.success('Register successfull!', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
                 });
-        })
-        .catch(error=>{
-            toast.error(`${error.message}`, {
-                position: "top-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "light",
+            })
+            .catch(error => {
+                toast.error(`${error.message}`, {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
                 });
-        })
+            })
+    }
+
+
+    const handleGoogleLogin=()=>{
+
+    }
+
+    const handleGitHubLogin=()=>{
+
     }
 
 
@@ -70,6 +80,20 @@ const Login = () => {
                         <div className="form-control mt-6">
                             <Link to='/register'>Creat  a new  acount ? Please<button className="btn btn-link">Register</button></Link>
                         </div>
+
+                        <button onClick={handleGoogleLogin} className="">
+                            <div className='flex items-center justify-center border-2 gap-2 p-2 rounded-md'>
+                                <FaGoogle></FaGoogle> Google Login
+                               
+                            </div>
+                        </button>
+
+                        <button onClick={handleGitHubLogin} className="">
+                            <div className='flex items-center justify-center border-2 gap-2 p-2 rounded-md'>
+                                <FaGithub></FaGithub> Github Login
+                               
+                            </div>
+                        </button>
                     </form>
                 </div>
                 <ToastContainer />
