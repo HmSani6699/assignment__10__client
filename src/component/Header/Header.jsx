@@ -4,7 +4,12 @@ import { AuthContext } from '../../Providers/Authprovider';
 
 const Header = () => {
 
-    const { user } = useContext(AuthContext);
+    const { user,logOut } = useContext(AuthContext);
+
+
+    const signOut = () => {
+        logOut()
+    }
 
     return (
         <div>
@@ -19,13 +24,15 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                {user&&
-                    <div className="avatar mr-4 hover:${}">
-                    <div style={{width:'45px'}} className=" rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                        <img src={user&&user.photoURL} />
-                    </div>
-                </div>}
-                    <Link to='/login'><button className="btn btn-active btn-primary mr-2">Login</button></Link>
+                    {user &&
+                        <div className="avatar mr-4 hover:${}">
+                            <div style={{ width: '45px' }} className=" rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                                <img src={user && user.photoURL} />
+                            </div>
+                        </div>}
+                    {user ?
+                        <button onClick={signOut} className="btn btn-active btn-primary mr-2">Sign out</button> : <Link to='/login'><button className="btn btn-active btn-primary mr-2">Login</button></Link>
+                    }
                     <Link to='/register'><button className="btn btn-active btn-primary">Register</button></Link>
                 </div>
             </div>
