@@ -18,10 +18,11 @@ const Register = () => {
         console.log(name, email, password,photoUrl);
 
         //creat a new user
-        createUser(email, password)
+        createUser(email, password,name,photoUrl)
         .then(result=>{
             const user =result.user;
             console.log(user);
+            updateProfileUser(name,photoUrl)
             form.reset()
             toast.success('Register successfull!', {
                 position: "top-right",
@@ -46,13 +47,6 @@ const Register = () => {
                 progress: undefined,
                 theme: "light",
                 });
-        })
-
-        //user update
-        updateProfileUser(name,photoUrl)
-        .then(result=>{})
-        .catch(error=>{
-            console.log(error);
         })
 
     }

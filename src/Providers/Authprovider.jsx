@@ -39,10 +39,11 @@ const AuthProvider = ({ children }) => {
 
 
     const updateProfileUser = (name, userPhoto) => {
-        console.log(name, userPhoto);
-        return updateProfile(user, {
-            displayName: `${name}`, photoURL: `${userPhoto}`
+        updateProfile(auth.currentUser,{
+            displayName:name,photoURL:userPhoto
         })
+        .then(()=>setUser((user)=>({...user,displayName:name,photoURL:userPhoto})))
+        .catch(error=>console.log(error))
     }
 
 
