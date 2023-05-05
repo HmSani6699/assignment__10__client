@@ -1,42 +1,37 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import banner from '../../assets/benner.jpg';
 
 const Header = () => {
     return (
-        <div className="navbar bg-base-500 container">
-            <div className="navbar-start">
-                {/* <div className="dropdown">
-                    <label tabIndex={0} className="btn btn-ghost lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-                    </label>
-                    <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                        <li><a>Item 1</a></li>
-                        <li tabIndex={0}>
-                            <a className="justify-between">
-                                Parent
-                                <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-                            </a>
-                            <ul className="p-2">
-                                <li><a>Submenu 1</a></li>
-                                <li><a>Submenu 2</a></li>
-                            </ul>
-                        </li>
-                        <li><a>Item 3</a></li>
+        <div>
+            <div className="navbar bg-base-500 container">
+                <div className="navbar-start">
+                    <h4 className='text-3xl font-semibold'>Food Racipi</h4>
+                </div>
+                <div className="navbar-center hidden lg:flex">
+                    <ul className="menu menu-horizontal px-1">
+                        <li><Link to='/'>Home</Link></li>
+                        <li><Link to='/blog'>Blog</Link></li>
                     </ul>
-                </div> */}
-                <h4 className='text-3xl font-semibold'>Food Racipi</h4>
+                </div>
+                <div className="navbar-end">
+                    <Link to='/login'><button className="btn btn-active btn-primary mr-2">Login</button></Link>
+                    <Link to='/register'><button className="btn btn-active btn-primary">Register</button></Link>
+                </div>
             </div>
-            <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
-                    <li><Link to='/'>Home</Link></li>
-                    <li><Link to='/blog'>Blog</Link></li>
-                </ul>
-            </div>
-            <div className="navbar-end">
-                <Link to='/login'><button className="btn btn-active btn-primary mr-2">Login</button></Link>
-                <Link to='/register'><button className="btn btn-active btn-primary">Register</button></Link>
+            <div className="hero min-h-screen" style={{ backgroundImage: `url(${banner})` }}>
+                <div className="hero-overlay bg-opacity-30"></div>
+                <div className="hero-content text-center text-neutral-content">
+                    <div className="max-w-md">
+                        <h1 className="mb-5 text-5xl font-bold">Going Beyond Guacamole: Exploring the Many Delicious Avocado Dishes in india Cuisine</h1>
+                        <p className="mb-5">India cuisine is famous for its bold and vibrant flavors, as well as its use of fresh ingredients, spices, and herbs. From spicy chiles and tangy lime juice to fragrant cilantro and rich avocado, india dishes are known for their delicious complexity.</p>
+                        <button className="btn btn-primary">Get Started</button>
+                    </div>
+                </div>
             </div>
         </div>
+
     );
 };
 
