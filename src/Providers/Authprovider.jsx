@@ -8,8 +8,8 @@ export const AuthContext = createContext(null);
 const auth = getAuth(app)
 
 const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState(null);
-    const [loading, setLoding] = useState(true)
+    // const [user, setUser] = useState(null);
+    // const [loading, setLoding] = useState(true)
 
     const createUser = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password)
@@ -36,8 +36,8 @@ const AuthProvider = ({ children }) => {
     }
 
     const authInfo = {
-        user,
-        loading,
+        // user,
+        // loading,
         createUser,
         googleLogin,
         githubLogin,
@@ -47,17 +47,17 @@ const AuthProvider = ({ children }) => {
 
 
 
-    useEffect(() => {
-        const unSubscrib = onAuthStateChanged(auth, (currentUser) => {
-            console.log(currentUser);
-            setUser(currentUser);
-            setLoding(false)
+    // useEffect(() => {
+    //     const unSubscrib = onAuthStateChanged(auth, (currentUser) => {
+    //         console.log(currentUser);
+    //         // setUser(currentUser);
+    //         // setLoding(false)
 
-        });
-        return () => {
-            unSubscrib()
-        }
-    }, [])
+    //     });
+    //     return () => {
+    //         unSubscrib()
+    //     }
+    // }, [])
 
     return (
         <AuthContext.Provider value={authInfo} >
