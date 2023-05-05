@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Providers/Authprovider';
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
 
-    const { createUser } = useContext(AuthContext);
+    const { createUser,updateProfileUser } = useContext(AuthContext);
 
     const handleRegisterFormSubmit = (event) => {
         event.preventDefault();
@@ -21,7 +23,34 @@ const Register = () => {
             const user =result.user;
             console.log(user);
             form.reset()
+            toast.success('Register successfull!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                });
         })
+        .catch(error=>{
+            console.log(error);
+            toast.error(`${error.message}`, {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                });
+        })
+
+        //user update
+        updateProfileUser(name,photoUrl)
+        .then(result=>{})
         .catch(error=>{
             console.log(error);
         })
@@ -31,7 +60,7 @@ const Register = () => {
     return (
         <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content">
-                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                    <div className="card  mt-6 mb-16 flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <form onSubmit={handleRegisterFormSubmit} className="card-body">
                             <div className="form-control">
                                 <label className="label">
@@ -68,6 +97,7 @@ const Register = () => {
                             </div>
                         </form>
                     </div>
+                    <ToastContainer></ToastContainer>
                 </div>
             </div>
     );
