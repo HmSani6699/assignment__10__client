@@ -2,9 +2,10 @@ import React from 'react';
 
 const Blog = () => {
     return (
-        <div className='w-2/4 mx-auto mt-10 mb-14'>
+        <div className='w-2/4 mx-auto mt-10 mb-14 '>
             <h1 className='text-center text-4xl font-bold underline mb-6'>Blog Page Question</h1>
-            <div className=' bg-red-200 p-10'>
+            <div className='shadow-xl'>
+            <div className=' p-10'>
                 <h2 className='text-2xl font-semibold'>1. Tell us the differences between uncontrolled and controlled components.</h2>
                 <blockquote className='ps-5 mt-4'>
                     <p>In React, components can be broadly classified into two categories: controlled components and uncontrolled components. The key difference between these two types of components is how they manage and update their state.</p>
@@ -18,7 +19,7 @@ const Blog = () => {
                     <p> Uncontrolled components manage their own state internally, without any intervention from the parent component. Uncontrolled components typically use refs to access the current state of the component, which can be retrieved at any time. Examples of uncontrolled components include input elements and form elements.</p>
                 </blockquote>
             </div>
-            <div className=' bg-red-200 p-10'>
+            <div className='p-10'>
                 <h2 className='text-2xl font-semibold'>2. How to validate React props using PropTypes
                 </h2>
                 <blockquote className='ps-5 mt-4'>
@@ -28,7 +29,7 @@ const Blog = () => {
 
                 </blockquote>
             </div>
-            <div className=' bg-red-200 p-10'>
+            <div className='p-10'>
                 <h2 className='text-2xl font-semibold'>3. Tell us the difference between nodejs and express js.</h2>
                 <blockquote className='ps-5 mt-4'>
                     <p>Node.js is a JavaScript runtime that allows you to run JavaScript code outside of a web browser. It provides a platform for building server-side applications in JavaScript. Node.js is built on top of the V8 JavaScript engine used in Google Chrome and provides an event-driven, non-blocking I/O model that makes it efficient and scalable.
@@ -47,7 +48,7 @@ const Blog = () => {
                         Node.js has a steeper learning curve and requires more low-level programming, while Express.js provides a simpler and more convenient way to work with HTTP requests and responses.</p>
                 </blockquote>
             </div>
-            <div className=' bg-red-200 p-10'>
+            <div className='p-10'>
                 <h2 className='text-2xl font-semibold'>4. What is a custom hook, and why will you create a custom hook?
                 </h2>
                 <blockquote className='ps-5 mt-4'>
@@ -59,6 +60,7 @@ const Blog = () => {
                         Encapsulating stateful logic: Sometimes, you might have complex stateful logic that you want to encapsulate into a separate function. A custom hook allows you to do this, making your code more organized and easier to maintain.
                         Improving readability: If you have complex code that is hard to read and understand, a custom hook can help improve readability by abstracting away the complexity into a separate function with a descriptive name.</p>
                 </blockquote>
+            </div>
             </div>
         </div>
     );
