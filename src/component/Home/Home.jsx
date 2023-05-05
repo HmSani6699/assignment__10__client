@@ -5,6 +5,7 @@ import slider_2 from '../../assets/slider_2.jpg'
 import slider_3 from '../../assets/slider__3.jpg'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ChafContainer from '../ChafContainer/ChafContainer';
 
 const Home = () => {
 
@@ -72,6 +73,8 @@ const Home = () => {
                     <ToastContainer></ToastContainer>
                 </div>
             </div>
+
+            <ChafContainer></ChafContainer>
         </div>
     );
 };
