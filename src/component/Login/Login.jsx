@@ -49,11 +49,11 @@ const Login = () => {
 
 
     const handleGoogleLogin=()=>{
-
+        googleLogin()
     }
 
     const handleGitHubLogin=()=>{
-
+        githubLogin()
     }
 
 
