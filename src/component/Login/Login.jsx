@@ -81,20 +81,21 @@ const Login = () => {
                             <Link to='/register'>Creat  a new  acount ? Please<button className="btn btn-link">Register</button></Link>
                         </div>
 
-                        <button onClick={handleGoogleLogin} className="">
-                            <div className='flex items-center justify-center border-2 gap-2 p-2 rounded-md'>
+                       
+                    </form>
+                    <button onClick={handleGoogleLogin} className="">
+                            <div className='flex items-center justify-center border-2 gap-2 p-2 rounded-md  mr-4 ml-4 mb-2'>
                                 <FaGoogle></FaGoogle> Google Login
                                
                             </div>
                         </button>
 
                         <button onClick={handleGitHubLogin} className="">
-                            <div className='flex items-center justify-center border-2 gap-2 p-2 rounded-md'>
+                            <div className='flex items-center justify-center border-2 gap-2 p-2 rounded-md mr-4 ml-4 mb-4'>
                                 <FaGithub></FaGithub> Github Login
                                
                             </div>
                         </button>
-                    </form>
                 </div>
                 <ToastContainer />
             </div>
