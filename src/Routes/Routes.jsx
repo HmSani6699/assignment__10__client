@@ -6,6 +6,7 @@ import Blog from '../component/Blog/Blog';
 import Login from '../component/Login/Login';
 import Register from '../component/Register/Register';
 import Details from '../component/Details/Details';
+import PrivetRoute from './PrivetRoute';
 
 const router = createBrowserRouter([
     {

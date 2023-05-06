@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Providers/Authprovider';
 
-const User = ({ user }) => {
+const User = ({ currantUser }) => {
 
-    const {id, name, yearsOfExperience, likes,numberOfRecipes,imageUrl } = user;
+    const { user } = useContext(AuthContext)
     
+    const {id, name, yearsOfExperience, likes,numberOfRecipes,imageUrl } = currantUser;
+
     return (
         <div>
             <div className="card card-compact w-full bg-base-100 shadow-xl">
@@ -15,7 +18,9 @@ const User = ({ user }) => {
                     <p>Likes{likes}</p>
                     <p>Numbers of recipes: {numberOfRecipes}</p>
                     <div className="card-actions justify-end">
-                        <Link to={`/user/${id}`}><button className="btn btn-primary">Viwe Recipes</button></Link>
+                        {
+                            user?<Link to={`/user/${id}`}><button className="btn btn-primary">Viwe Recipes</button></Link>:<Link to='/login'><button className="btn btn-primary">Viwe Recipes</button></Link>
+                        }
                     </div>
                 </div>
             </div>

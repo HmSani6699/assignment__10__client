@@ -15,7 +15,7 @@ const Header = () => {
         <div>
             <div className="navbar bg-base-500 container">
                 <div className="navbar-start">
-                    <h4 className='text-3xl font-semibold'>Food Racipi</h4>
+                    <h4 className='text-3xl font-semibold'>Food Recipe</h4>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
