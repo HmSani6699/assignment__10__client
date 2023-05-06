@@ -24,6 +24,9 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
+
+            <ChafContainer></ChafContainer>
+            
             <div className="carousel w-2/4 h-72 mx-auto mt-10">
                 <div id="item1" className="carousel-item w-full">
                     <img src={slider_1} className="w-full" />
@@ -41,7 +44,6 @@ const Home = () => {
                 <a href="#item3" className="btn btn-xs">3</a>
                 <a href="#item4" className="btn btn-xs">4</a>
             </div>
-
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content">
                     <div className="card  mt-6 mb-16 flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -74,7 +76,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <ChafContainer></ChafContainer>
+           
         </div>
     );
 };

@@ -10,7 +10,7 @@ const Header = () => {
     const signOut = () => {
         logOut()
     }
-
+    
     return (
         <div>
             <div className="navbar bg-base-500 container">
@@ -27,7 +27,7 @@ const Header = () => {
                     {user &&
                         <div className="avatar mr-4 hover:${}">
                             <div style={{ width: '45px' }} className=" rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                                <img src={user && user.photoURL} />
+                                <img title={user&&user.displayName} src={user && user.photoURL} />
                             </div>
                         </div>}
                     {user ?
