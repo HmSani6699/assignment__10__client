@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Providers/Authprovider';
+import ActiveLink from '../ActiveLink/Active';
 
 const Header = () => {
 
@@ -19,8 +20,8 @@ const Header = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                        <li><Link to='/'>Home</Link></li>
-                        <li><Link to='/blog'>Blog</Link></li>
+                        <li className='mr-4'><ActiveLink to='/'>Home</ActiveLink></li>
+                        <li><ActiveLink to='/blog'>Blog</ActiveLink></li>
                     </ul>
                 </div>
                 <div className="navbar-end">
