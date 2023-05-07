@@ -1,15 +1,16 @@
 import React from 'react';
+import DetailsCard from './DetailsCard';
 
-const Details = ({currentUser}) => {
+const Details = ({ currentUser }) => {
 
-    const { cookingProcess, name, yearsOfExperience, likes, numberOfRecipes, imageUrl } = currentUser;
+    const { id, cookingProcess, name, yearsOfExperience, likes, numberOfRecipes, imageUrl } = currentUser;
 
 
     return (
         <div>
             <div className='bg-base-100 shadow-xl border flex w-3/4 mx-auto mt-16 mb-16 rounded-xl gap-4  p-4'>
                 <div >
-                    <img className='rounded-l-xl h-full' style={{width:'1800px'}} src={imageUrl} alt="Movie" />
+                    <img className='rounded-l-xl h-full' style={{ width: '1800px' }} src={imageUrl} alt="Movie" />
                 </div>
                 <div className='p-4 text-justify'>
                     <h2 className="text-3xl font-bold mb-3">{name}</h2>
@@ -19,6 +20,11 @@ const Details = ({currentUser}) => {
                     <h5 className='font-semibold mb-2'>Discription: <small>{cookingProcess}</small></h5>
                 </div>
             </div>
+
+            <DetailsCard
+                key={id}
+                currentUser={currentUser}
+            ></DetailsCard>
         </div>
     );
 };
