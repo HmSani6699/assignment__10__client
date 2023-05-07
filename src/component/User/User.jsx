@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const User = ({ currantUser }) => {
 
@@ -8,7 +9,7 @@ const User = ({ currantUser }) => {
     return (
         <div>
             <div className="card card-compact w-full bg-base-100 shadow-xl">
-                <figure><img style={{ height: '270px' }} className='w-full' src={imageUrl} alt="Shoes" /></figure>
+                <figure><LazyLoadImage style={{ height: '270px' }} className='w-full' src={imageUrl} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">Chef Name:{name}</h2>
                     <p>Years of experience{yearsOfExperience}</p>

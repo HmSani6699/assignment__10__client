@@ -31,7 +31,7 @@ const router = createBrowserRouter([
         },
         {
           path:'/user/:id',
-          element:<PrivetRoute></PrivetRoute>
+          element:<PrivetRoute ></PrivetRoute>
         }
       ]
     },

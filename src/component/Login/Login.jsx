@@ -1,11 +1,13 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/Authprovider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaGithub, FaGoogle } from "react-icons/fa";
 
 const Login = () => {
+
+    const navigate=useNavigate()
 
     const [error,setError] =useState('')
 
@@ -20,9 +22,9 @@ const Login = () => {
         // sign in to user
         signIn(email, password)
             .then(result => {
-                const user = result.user;
-                console.log(user);
+                // const user = result.user;
                 form.reset();
+                navigate('/')
                 toast.success('Register successfull!', {
                     position: "top-right",
                     autoClose: 5000,
