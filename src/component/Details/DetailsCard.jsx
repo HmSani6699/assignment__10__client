@@ -4,7 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const DetailsCard = ({ currentUser }) => {
 
-    const { ingredients, cookingProcess } = currentUser;
+    const {id, ingredients, cookingProcess } = currentUser;
 
     const handleRavorite = (event) => {
         
@@ -28,7 +28,7 @@ const DetailsCard = ({ currentUser }) => {
                     <h2 className="card-title">Beef Wellington</h2>
                     <p className='font-semibold'>Ingredients</p>
                     {
-                        ingredients && ingredients.map(item => <li>{item}</li>)
+                        ingredients && ingredients.map(item => <li key={id}>{item}</li>)
                     }
                     <p className='font-semibold'>CookingProcess : <small>{cookingProcess}</small></p>
                     <div className="card-actions justify-center">
@@ -41,7 +41,7 @@ const DetailsCard = ({ currentUser }) => {
                     <h2 className="card-title">Beef Wellington</h2>
                     <p className='font-semibold'>Ingredients</p>
                     {
-                        ingredients && ingredients.map(item => <li>{item}</li>)
+                        ingredients && ingredients.map(item => <li key={id}>{item}</li>)
                     }
                     <p className='font-semibold'>CookingProcess : <small>{cookingProcess}</small></p>
                     <div className="card-actions justify-center">
@@ -53,7 +53,7 @@ const DetailsCard = ({ currentUser }) => {
                     <h2 className="card-title">Beef Wellington</h2>
                     <p className='font-semibold'>Ingredients</p>
                     {
-                        ingredients && ingredients.map(item => <li>{item}</li>)
+                        ingredients && ingredients.map(item => <li key={id}>{item}</li>)
                     }
                     <p className='font-semibold'>CookingProcess : <small>{cookingProcess}</small></p>
                     <div className="card-actions justify-center">

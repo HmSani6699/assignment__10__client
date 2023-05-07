@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/Authprovider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -7,7 +7,10 @@ import { FaGithub, FaGoogle } from "react-icons/fa";
 
 const Login = () => {
 
-    const navigate=useNavigate()
+    const navigate=useNavigate();
+
+    const location=useLocation();
+    const from =location.state?.from?.pathname || '/'
 
     const [error,setError] =useState('')
 
@@ -24,7 +27,7 @@ const Login = () => {
             .then(result => {
                 // const user = result.user;
                 form.reset();
-                navigate('/')
+                navigate(from, { replace: true });
                 toast.success('Register successfull!', {
                     position: "top-right",
                     autoClose: 5000,
