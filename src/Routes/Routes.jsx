@@ -6,6 +6,7 @@ import Blog from '../component/Blog/Blog';
 import Login from '../component/Login/Login';
 import Register from '../component/Register/Register';
 import PrivetRoute from './PrivetRoute';
+import Error from '../ErrorPage/Error';
 
 const router = createBrowserRouter([
     {
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
         }
       ]
     },
+    {
+      path:'*',
+      element:<Error></Error>
+    }
+
   ]);
 
   export default router;

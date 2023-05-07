@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Providers/Authprovider';
 import { ToastContainer, toast } from 'react-toastify';
@@ -7,14 +7,15 @@ import { FaGithub, FaGoogle } from "react-icons/fa";
 
 const Login = () => {
 
-    const { signIn ,googleLogin,githubLogin} = useContext(AuthContext);
+    const [error,setError] =useState('')
+
+    const { signIn, googleLogin, githubLogin } = useContext(AuthContext);
 
     const handleLoginFormSubmit = (event) => {
         event.preventDefault()
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
 
         // sign in to user
         signIn(email, password)
@@ -34,6 +35,7 @@ const Login = () => {
                 });
             })
             .catch(error => {
+                setError(error.message)
                 toast.error(`${error.message}`, {
                     position: "top-right",
                     autoClose: 5000,
@@ -48,11 +50,11 @@ const Login = () => {
     }
 
 
-    const handleGoogleLogin=()=>{
+    const handleGoogleLogin = () => {
         googleLogin()
     }
 
-    const handleGitHubLogin=()=>{
+    const handleGitHubLogin = () => {
         githubLogin()
     }
 
@@ -77,25 +79,26 @@ const Login = () => {
                         <div className="form-control mt-6">
                             <button type='submit' className="btn btn-primary">Login</button>
                         </div>
+                        <p className='text-red-600'>{error}</p>
                         <div className="form-control mt-6">
                             <Link to='/register'>Creat  a new  acount ? Please<button className="btn btn-link">Register</button></Link>
                         </div>
 
-                       
+
                     </form>
                     <button onClick={handleGoogleLogin} className="">
-                            <div className='flex items-center justify-center border-2 gap-2 p-2 rounded-md  mr-4 ml-4 mb-2'>
-                                <FaGoogle></FaGoogle> Google Login
-                               
-                            </div>
-                        </button>
+                        <div className='flex items-center justify-center border-2 gap-2 p-2 rounded-md  mr-4 ml-4 mb-2'>
+                            <FaGoogle></FaGoogle> Google Login
 
-                        <button onClick={handleGitHubLogin} className="">
-                            <div className='flex items-center justify-center border-2 gap-2 p-2 rounded-md mr-4 ml-4 mb-4'>
-                                <FaGithub></FaGithub> Github Login
-                               
-                            </div>
-                        </button>
+                        </div>
+                    </button>
+
+                    <button onClick={handleGitHubLogin} className="">
+                        <div className='flex items-center justify-center border-2 gap-2 p-2 rounded-md mr-4 ml-4 mb-4'>
+                            <FaGithub></FaGithub> Github Login
+
+                        </div>
+                    </button>
                 </div>
                 <ToastContainer />
             </div>
