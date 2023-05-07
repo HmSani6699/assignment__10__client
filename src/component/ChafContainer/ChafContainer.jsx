@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import User from '../User/User';
-import { Link } from 'react-router-dom';
 
 const ChafContainer = () => {
 

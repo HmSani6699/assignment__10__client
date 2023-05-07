@@ -48,6 +48,7 @@ const Home = () => {
                 <div className="hero-content">
                     <div className="card  mt-6 mb-16 flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <form className="card-body">
+                            <h2 className='text-blue-600 text-center text-2xl font-semibold'>Feedback Please !!</h2>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Name</span>

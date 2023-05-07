@@ -5,7 +5,6 @@ import Home from '../component/Home/Home';
 import Blog from '../component/Blog/Blog';
 import Login from '../component/Login/Login';
 import Register from '../component/Register/Register';
-import Details from '../component/Details/Details';
 import PrivetRoute from './PrivetRoute';
 
 const router = createBrowserRouter([
@@ -31,10 +30,8 @@ const router = createBrowserRouter([
         },
         {
           path:'/user/:id',
-          element:<Details></Details>,
-          loader:({params})=>fetch(`http://localhost:5000/user/${params.id}`)
+          element:<PrivetRoute></PrivetRoute>
         }
-
       ]
     },
   ]);

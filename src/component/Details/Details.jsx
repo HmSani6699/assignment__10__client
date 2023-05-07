@@ -1,11 +1,8 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
 
-const Details = () => {
+const Details = ({currentUser}) => {
 
-    const user = useLoaderData();
-
-    const { cookingProcess, name, yearsOfExperience, likes, numberOfRecipes, imageUrl } = user;
+    const { cookingProcess, name, yearsOfExperience, likes, numberOfRecipes, imageUrl } = currentUser;
 
 
     return (
