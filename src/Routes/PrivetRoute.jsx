@@ -16,7 +16,7 @@ const PrivetRoute = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/user/${id.id}`)
+        fetch(`https://assignment-10-sever-site-hmsani6699.vercel.app/user/${id.id}`)
             .then(res => res.json())
             .then(data => setCurrentUser(data))
     }, []);

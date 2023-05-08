@@ -6,7 +6,7 @@ const ChafContainer = () => {
     const [loadUser, setUser] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/user')
+        fetch('https://assignment-10-sever-site-hmsani6699.vercel.app/user')
             .then(res => res.json())
             .then(data => setUser(data))
     }, []);
