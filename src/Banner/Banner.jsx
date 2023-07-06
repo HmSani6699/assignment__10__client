@@ -2,6 +2,7 @@ import React from 'react';
 import banner from '../assets/benner.jpg';
 
 const Banner = () => {
+    
     return (
         <div>
             <div className="hero min-h-screen" style={{ backgroundImage: `url(${banner})` }}>
